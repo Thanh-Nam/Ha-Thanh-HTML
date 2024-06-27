@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.css">
+    <link rel="stylesheet" href="./assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="./assets/css/output.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header id="header" class="sticky top-0 z-30 shadow-2xl">
+        <div class="bg-[#76A021] hidden lg:block">
+            <div class="container flex items-center justify-between py-[8px] px-[8px] md:px-[16px] xl:px-0">
+                <a href="tel:0974237890" class="text-white leading-[137.5%] font-normal">Hotline: <span class="font-bold">0974 23 7890</span></a>
+                <form class="relative">
+                    <input type="text" class="w-[400px] bg-transparent border-[1px] border-solid border-white rounded-[32px] px-[12px] py-[6px] outline-none text-white text-[14px] placeholder:text-[#f5f5f5]" placeholder="Nhập từ khoá tìm kiếm...">
+                    <button type="submit" class="absolute top-[50%] translate-y-[-50%] right-[12px] text-white"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <div class="flex items-center gap-[16px]">
+                    <button class="login text-[14px] font-bold px-[16px] py-[8px] bg-white transition-all duration-300 ease-linear hover:bg-[#FFD700]">Đăng nhập</button>
+                    <button class="register text-[14px] font-bold px-[16px] py-[8px] bg-[#FFD700] transition-all duration-300 ease-linear hover:bg-white">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#fff]">
+            <div class="container flex items-center justify-between py-[8px] px-[8px] md:px-[16px] xl:px-0">
+                <div class="lg:hidden">
+                    <button class="text-[24px]" onclick="handleOpenMenu()"><i class="fa-solid fa-bars"></i></button>
+                    <div class="overlay fixed top-0 left-0 right-0 bottom-0 bg-black/30 translate-x-[100%] opacity-0 ease-linear duration-300 transition-all z-[19]"></div>
+                    <div class="menu-mobile fixed top-0 left-0 bottom-0 w-[320px] bg-white z-20 px-[16px] py-[42px] translate-x-[-100%] opacity-0 ease-linear duration-300 transition-all">
+                        <button class="close-menu-mobile text-[24px] px-[12px] py-[9px] text-[#76A021] absolute top-0 right-0 flex"><i class="fa-solid fa-xmark"></i></button> 
+                        <div class="flex items-start justify-center mb-[12px]">
+                            <img src="./assets/images/Logo.png" alt="Logo" class="max-w-[100px]">
+                        </div>
+                        <div class="relative mb-[12px]">
+                            <input type="text" class="bg-transparent w-full border-[1px] border-solid border-[#76A021] rounded-[32px] px-[12px] py-[6px] outline-none text-[#76A021] text-[14px] placeholder:text-[#76A021]" placeholder="Nhập từ khoá tìm kiếm...">
+                            <button class="absolute top-[50%] translate-y-[-50%] right-[12px] text-[#76A021]"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                        <ul>
+                            <li><a href="" >Trang chủ</a></li>
+                            <li><a href="" >Giới thiệu</a></li>
+                            <li><a href="" >Hồ sơ năng lực</a></li>
+                            <li><a href="" >Sản phẩm</a></li>
+                            <li><a href="" >Tin tức</a></li>
+                            <li><a href="" >Liên hệ</a></li>
+                        </ul>
+                        <div class="flex items-center justify-center gap-[16px] mt-[12px]">
+                            <button class="login text-[14px] font-bold px-[16px] py-[8px] bg-[#76A021] text-white">Đăng nhập</button>
+                            <button class="register text-[14px] font-bold px-[16px] py-[8px] bg-[#FFD700]">Đăng ký</button>
+                        </div>
+                    </div>
+                </div>
+                <router-link to="/" class="inline-block max-w-[74px]"><img src="./assets/images/Logo.png" alt="Logo"></router-link>
+                <div class="menu hidden lg:block">
+                    <ul>
+                        <li><a href="" >Trang chủ</a></li>
+                        <li><a href="" >Giới thiệu</a></li>
+                        <li><a href="" >Hồ sơ năng lực</a></li>
+                        <li><a href="" >Sản phẩm</a></li>
+                        <li><a href="" >Tin tức</a></li>
+                        <li><a href="" >Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="relative cursor-pointer">
+                    <i class="fa-solid fa-cart-shopping text-[20px]"></i>
+                    <p class="absolute top-[-12px] left-[-12px] w-[24px] h-[24px] bg-[#76A021] rounded-full text-white flex items-center justify-center">0</p>
+                </div>
+            </div>
+        </div>
+        <button class="back-to-top fixed z-[20] bottom-[30px] right-[20px] text-[24px] bg-white text-[#FFD700] w-[40px] h-[40px] hidden items-center justify-center rounded-full border-[1px] border-solid border-[#FFD700]"><i class="fa-solid fa-arrow-up"></i></button>
+    </header>
+    <main>
+        <section class="banner">
+            <div class="swiper slide-banner">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="./assets/images/banner1.jpg" alt="" class="w-full h-[60vh] object-cover">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./assets/images/banner1.jpg" alt="" class="w-full h-[60vh] object-cover">
+                  </div>
+                </div>
+                <div class="banner-next"></div>
+                <div class="banner-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="autoplay-progress">
+                  <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"></circle>
+                  </svg>
+                  <span></span>
+                </div>
+              </div>
+        </section>
+        <section class="cate">
+            <div class="container px-[8px] md:px-[16px] 2xl:px-0 2xl:py-[80px] lg:py-[60px] md:py-[40px] py-[30px]">
+                <h3 class="text-[24px] md:text-[28px] lg:text-[36px] font-semibold lg:mb-[30px] md:mb-[20px] mb-[16px] text-center text-[#76A021]">Danh mục sản phẩm</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[8px] md:gap-[12px] lg:gap-[16px]">
+                    <div class="cate-item relative h-[270px] flex items-end cursor-pointer">
+                        <a href="" class="cate-img absolute top-0 left-0 h-full w-full z-0 overflow-hidden"><img src="./assets/images/chan-ga-khach-san.jpg" alt="" class=" h-full w-full object-cover"></a>
+                        <div class="relative z-[2] px-[12px] py-[16px] w-full">
+                            <a href="#" class="title-item-cate font-bold lg:text-[20px] text-[18px] mb-[4px] text-white relative z-[1]">Chăn ga khách sạn</a>
+                            <p class="font-bold text-[#FFD700] relative z-[1]">10 sản phẩm</p>
+                        </div>
+                    </div>
+                    <div class="cate-item relative h-[270px] flex items-end cursor-pointer">
+                        <a href="" class="cate-img absolute top-0 left-0 h-full w-full z-0 overflow-hidden"><img src="./assets/images/chan-ga-khach-san.jpg" alt="" class=" h-full w-full object-cover"></a>
+                        <div class="relative z-[2] px-[12px] py-[16px] w-full">
+                            <a href="#" class="title-item-cate font-bold lg:text-[20px] text-[18px] mb-[4px] text-white relative z-[1]">Chăn ga khách sạn</a>
+                            <p class="font-bold text-[#FFD700] relative z-[1]">10 sản phẩm</p>
+                        </div>
+                    </div>
+                    <div class="cate-item relative h-[270px] flex items-end cursor-pointer">
+                        <a href="" class="cate-img absolute top-0 left-0 h-full w-full z-0 overflow-hidden"><img src="./assets/images/chan-ga-khach-san.jpg" alt="" class=" h-full w-full object-cover"></a>
+                        <div class="relative z-[2] px-[12px] py-[16px] w-full">
+                            <a href="#" class="title-item-cate font-bold lg:text-[20px] text-[18px] mb-[4px] text-white relative z-[1]">Chăn ga khách sạn</a>
+                            <p class="font-bold text-[#FFD700] relative z-[1]">10 sản phẩm</p>
+                        </div>
+                    </div>
+                    <div class="cate-item relative h-[270px] flex items-end cursor-pointer">
+                        <a href="" class="cate-img absolute top-0 left-0 h-full w-full z-0 overflow-hidden"><img src="./assets/images/chan-ga-khach-san.jpg" alt="" class=" h-full w-full object-cover"></a>
+                        <div class="relative z-[2] px-[12px] py-[16px] w-full">
+                            <a href="#" class="title-item-cate font-bold lg:text-[20px] text-[18px] mb-[4px] text-white relative z-[1]">Chăn ga khách sạn</a>
+                            <p class="font-bold text-[#FFD700] relative z-[1]">10 sản phẩm</p>
+                        </div>
+                    </div>
+                    <div class="cate-item relative h-[270px] flex items-end cursor-pointer">
+                        <a href="" class="cate-img absolute top-0 left-0 h-full w-full z-0 overflow-hidden"><img src="./assets/images/chan-ga-khach-san.jpg" alt="" class=" h-full w-full object-cover"></a>
+                        <div class="relative z-[2] px-[12px] py-[16px] w-full">
+                            <a href="#" class="title-item-cate font-bold lg:text-[20px] text-[18px] mb-[4px] text-white relative z-[1]">Chăn ga khách sạn</a>
+                            <p class="font-bold text-[#FFD700] relative z-[1]">10 sản phẩm</p>
+                        </div>
+                    </div>
+                    <div class="cate-item relative h-[270px] flex items-end cursor-pointer">
+                        <a href="" class="cate-img absolute top-0 left-0 h-full w-full z-0 overflow-hidden"><img src="./assets/images/chan-ga-khach-san.jpg" alt="" class=" h-full w-full object-cover"></a>
+                        <div class="relative z-[2] px-[12px] py-[16px] w-full">
+                            <a href="#" class="title-item-cate font-bold lg:text-[20px] text-[18px] mb-[4px] text-white relative z-[1]">Chăn ga khách sạn</a>
+                            <p class="font-bold text-[#FFD700] relative z-[1]">10 sản phẩm</p>
+                        </div>
+                    </div>
+                    <div class="cate-item relative h-[270px] flex items-end cursor-pointer">
+                        <a href="" class="cate-img absolute top-0 left-0 h-full w-full z-0 overflow-hidden"><img src="./assets/images/chan-ga-khach-san.jpg" alt="" class=" h-full w-full object-cover"></a>
+                        <div class="relative z-[2] px-[12px] py-[16px] w-full">
+                            <a href="#" class="title-item-cate font-bold lg:text-[20px] text-[18px] mb-[4px] text-white relative z-[1]">Chăn ga khách sạn</a>
+                            <p class="font-bold text-[#FFD700] relative z-[1]">10 sản phẩm</p>
+                        </div>
+                    </div>
+                    <div class="cate-item relative h-[270px] flex items-end cursor-pointer">
+                        <a href="" class="cate-img absolute top-0 left-0 h-full w-full z-0 overflow-hidden"><img src="./assets/images/chan-ga-khach-san.jpg" alt="" class=" h-full w-full object-cover"></a>
+                        <div class="relative z-[2] px-[12px] py-[16px] w-full">
+                            <a href="#" class="title-item-cate font-bold lg:text-[20px] text-[18px] mb-[4px] text-white relative z-[1]">Chăn ga khách sạn</a>
+                            <p class="font-bold text-[#FFD700] relative z-[1]">10 sản phẩm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <div
+                class="container px-[8px] md:px-[16px] 2xl:px-0 2xl:py-[80px] lg:py-[60px] md:py-[40px] py-[30px] lg:flex items-center gap-[32px] text-center lg:text-left">
+                <div class="about-text lg:w-[40%] mb-[26px] md:mb-[40px] lg:mb-0">
+                    <div class="mb-[12px]"><img src="./assets/images/Logo.png" alt="" class="w-[50%] mx-auto"></div>
+                    <h3 class="about-title mb-[12px] text-[24px] md:text-[28px] lg:text-[36px] font-semibold text-center">
+                        Công ty TNHH <span class="text-[#76A021] font-semibold">Hà Thành</span>
+                    </h3>
+                    <p class="about-content text-justify leading-[137.5%] text-[#4D5F7A] f-normal">
+                        <span class="font-semibold">Công ty TNHH Chăn Ga Gối Đệm Hà Thành</span> hoạt động trong lĩnh vực sản xuất bán các mặt hàng: <span class="font-semibold">Chăn ga gối đệm</span> dành cho khách sạn 3* đến 5*, resort, nhà nghỉ, gia đình,... <br><br>Với tiêu trí mang các sản phẩm cao cấp - chất lượng - giá rẻ của thương hiệu <span class="font-semibold">Hà Thành</span> đến mọi người.
+                    </p>
+                    <a href="#" class="hidden lg:mt-[40px] md:mt-[24px] mt-[8px]">Về chúng tôi</a>
+                </div>
+                <div
+                    class="about-img lg:w-[50%] ml-[12px] md:ml-[23px] inline-block">
+                    <img src="./assets/images/Logo.png" alt=""/>
+                </div>
+            </div>
+        </section>
+        <section class="statis">
+            <div class="bg-statis absolute w-full h-full z-0">
+                <img src="./assets/images/bg-statis.png" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="container relative z-[1] px-[8px] md:px-[16px] 2xl:px-0 md:py-[40px] py-[20px]">
+                <div class="swiper statis-slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class=""><img src="./assets/images/icon-chat-luong.png" alt="" class="w-[80px] mx-auto"></div>
+                            <p class="text-[16px] md:text-[20px] uppercase font-semibold text-center text-white mt-[12px] md:mt-[16px]">Chất lượng</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class=""><img src="./assets/images/icon-chat-luong.png" alt="" class="w-[80px] mx-auto"></div>
+                            <p class="text-[16px] md:text-[20px] uppercase font-semibold text-center text-white mt-[12px] md:mt-[16px]">Chất lượng</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class=""><img src="./assets/images/icon-chat-luong.png" alt="" class="w-[80px] mx-auto"></div>
+                            <p class="text-[16px] md:text-[20px] uppercase font-semibold text-center text-white mt-[12px] md:mt-[16px]">Chất lượng</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class=""><img src="./assets/images/icon-chat-luong.png" alt="" class="w-[80px] mx-auto"></div>
+                            <p class="text-[16px] md:text-[20px] uppercase font-semibold text-center text-white mt-[12px] md:mt-[16px]">Chất lượng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="list-cate">
+            <div class="container px-[8px] md:px-[16px] 2xl:px-0 2xl:py-[80px] lg:py-[60px] md:py-[40px] py-[30px]">
+                <div class="mb-[16px] md:mb-[20px] lg:mb-[30px] last:mb-0">
+                    <div class="md:flex items-center justify-between mb-[12px] md:mb-[16px] lg:mb-[24px]">
+                        <h3 class="text-[24px] md:text-[28px] lg:text-[36px] font-semibold text-[#76A021] mb-[8px] md:mb-0">Chăn ga khách sạn</h3>
+                        <a href="#"
+                            class="button-hover relative items-center f-semibold xl:text-[18px] xl:leading-[24px] md:px-[14px] px-[8px] xl:px-[20px] md:py-[10px] py-[5px] bg-white cursor-pointer  text-[14px] lg:text-[16px] text-[#76A021]">
+                            <span class="relative z-[1] text-[#76A021] mr-[8px]">Xem tất cả</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="swiper product-slide">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="pro-item bg-white rounded-[4px] overflow-hidden">
+                                    <div class="pro-img w-full relative pb-[80%] overflow-hidden">
+                                        <a href="#" class="absolute top-0 left-0 w-full h-full"><img src="./assets/images/pro-detail-1.jpg" alt="" class="w-full h-full object-cover"></a>
+                                        <p class="absolute top-[10px] right-[10px] w-[40px] h-[40px] bg-[#d80027] text-white rounded-full flex items-center justify-center">15%</p>
+                                        <button class="absolute top-[-60px] left-[10px] w-[40px] h-[40px] bg-[#76A021] text-white flex items-center justify-center rounded-full border-[1px] border-solid border-[#76A021] hover:bg-white hover:text-[#76A021]"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                    <div class="p-[8px] md:p-[12px] lg:p-[16px]">
+                                        <a href="#" class="text-[16px] font-semibold line-clamp-2 hover:text-[#76A021] transition-all duration-300 ease-linear mb-[8px]">Chăn ga khách sạn 1</a>
+                                        <div class="md:flex items-center gap-[8px] lg:gap-[12px]">
+                                            <p class="text-[#FF6347] text-[18px] font-semibold mb-[4px] md:mb-0">900.000đ</p>
+                                            <p class="text-[14px] text-[#D3D3D3] line-through">1.000.000đ</p>
+                                        </div>
+                                        <!-- <p class="text-[#FF6347] text-[18px] font-semibold">{{ formatPrice(item.sizeAndPrice[0].price) }}</p> -->
+                                        <div class="text-center lg:hidden mt-[12px]">
+                                            <button class="bg-[#76A021] text-[14px] px-[10px] py-[8px] text-white">Thêm vào giỏ hàng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="pro-item bg-white rounded-[4px] overflow-hidden">
+                                    <div class="pro-img w-full relative pb-[80%] overflow-hidden">
+                                        <a href="#" class="absolute top-0 left-0 w-full h-full"><img src="./assets/images/pro-detail-1.jpg" alt="" class="w-full h-full object-cover"></a>
+                                        <p class="absolute top-[10px] right-[10px] w-[40px] h-[40px] bg-[#d80027] text-white rounded-full flex items-center justify-center">15%</p>
+                                        <button class="absolute top-[-60px] left-[10px] w-[40px] h-[40px] bg-[#76A021] text-white flex items-center justify-center rounded-full border-[1px] border-solid border-[#76A021] hover:bg-white hover:text-[#76A021]"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                    <div class="p-[8px] md:p-[12px] lg:p-[16px]">
+                                        <a href="#" class="text-[16px] font-semibold line-clamp-2 hover:text-[#76A021] transition-all duration-300 ease-linear mb-[8px]">Chăn ga khách sạn 1</a>
+                                        <div class="md:flex items-center gap-[8px] lg:gap-[12px]">
+                                            <p class="text-[#FF6347] text-[18px] font-semibold mb-[4px] md:mb-0">900.000đ</p>
+                                            <p class="text-[14px] text-[#D3D3D3] line-through">1.000.000đ</p>
+                                        </div>
+                                        <!-- <p class="text-[#FF6347] text-[18px] font-semibold">{{ formatPrice(item.sizeAndPrice[0].price) }}</p> -->
+                                        <div class="text-center lg:hidden mt-[12px]">
+                                            <button class="bg-[#76A021] text-[14px] px-[10px] py-[8px] text-white">Thêm vào giỏ hàng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="pro-item bg-white rounded-[4px] overflow-hidden">
+                                    <div class="pro-img w-full relative pb-[80%] overflow-hidden">
+                                        <a href="#" class="absolute top-0 left-0 w-full h-full"><img src="./assets/images/pro-detail-1.jpg" alt="" class="w-full h-full object-cover"></a>
+                                        <p class="absolute top-[10px] right-[10px] w-[40px] h-[40px] bg-[#d80027] text-white rounded-full flex items-center justify-center">15%</p>
+                                        <button class="absolute top-[-60px] left-[10px] w-[40px] h-[40px] bg-[#76A021] text-white flex items-center justify-center rounded-full border-[1px] border-solid border-[#76A021] hover:bg-white hover:text-[#76A021]"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                    <div class="p-[8px] md:p-[12px] lg:p-[16px]">
+                                        <a href="#" class="text-[16px] font-semibold line-clamp-2 hover:text-[#76A021] transition-all duration-300 ease-linear mb-[8px]">Chăn ga khách sạn 1</a>
+                                        <div class="md:flex items-center gap-[8px] lg:gap-[12px]">
+                                            <p class="text-[#FF6347] text-[18px] font-semibold mb-[4px] md:mb-0">900.000đ</p>
+                                            <p class="text-[14px] text-[#D3D3D3] line-through">1.000.000đ</p>
+                                        </div>
+                                        <!-- <p class="text-[#FF6347] text-[18px] font-semibold">{{ formatPrice(item.sizeAndPrice[0].price) }}</p> -->
+                                        <div class="text-center lg:hidden mt-[12px]">
+                                            <button class="bg-[#76A021] text-[14px] px-[10px] py-[8px] text-white">Thêm vào giỏ hàng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="pro-item bg-white rounded-[4px] overflow-hidden">
+                                    <div class="pro-img w-full relative pb-[80%] overflow-hidden">
+                                        <a href="#" class="absolute top-0 left-0 w-full h-full"><img src="./assets/images/pro-detail-1.jpg" alt="" class="w-full h-full object-cover"></a>
+                                        <p class="absolute top-[10px] right-[10px] w-[40px] h-[40px] bg-[#d80027] text-white rounded-full flex items-center justify-center">15%</p>
+                                        <button class="absolute top-[-60px] left-[10px] w-[40px] h-[40px] bg-[#76A021] text-white flex items-center justify-center rounded-full border-[1px] border-solid border-[#76A021] hover:bg-white hover:text-[#76A021]"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                    <div class="p-[8px] md:p-[12px] lg:p-[16px]">
+                                        <a href="#" class="text-[16px] font-semibold line-clamp-2 hover:text-[#76A021] transition-all duration-300 ease-linear mb-[8px]">Chăn ga khách sạn 1</a>
+                                        <div class="md:flex items-center gap-[8px] lg:gap-[12px]">
+                                            <p class="text-[#FF6347] text-[18px] font-semibold mb-[4px] md:mb-0">900.000đ</p>
+                                            <p class="text-[14px] text-[#D3D3D3] line-through">1.000.000đ</p>
+                                        </div>
+                                        <!-- <p class="text-[#FF6347] text-[18px] font-semibold">{{ formatPrice(item.sizeAndPrice[0].price) }}</p> -->
+                                        <div class="text-center lg:hidden mt-[12px]">
+                                            <button class="bg-[#76A021] text-[14px] px-[10px] py-[8px] text-white">Thêm vào giỏ hàng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="pro-item bg-white rounded-[4px] overflow-hidden">
+                                    <div class="pro-img w-full relative pb-[80%] overflow-hidden">
+                                        <a href="#" class="absolute top-0 left-0 w-full h-full"><img src="./assets/images/pro-detail-1.jpg" alt="" class="w-full h-full object-cover"></a>
+                                        <p class="absolute top-[10px] right-[10px] w-[40px] h-[40px] bg-[#d80027] text-white rounded-full flex items-center justify-center">15%</p>
+                                        <button class="absolute top-[-60px] left-[10px] w-[40px] h-[40px] bg-[#76A021] text-white flex items-center justify-center rounded-full border-[1px] border-solid border-[#76A021] hover:bg-white hover:text-[#76A021]"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                    <div class="p-[8px] md:p-[12px] lg:p-[16px]">
+                                        <a href="#" class="text-[16px] font-semibold line-clamp-2 hover:text-[#76A021] transition-all duration-300 ease-linear mb-[8px]">Chăn ga khách sạn 1</a>
+                                        <div class="md:flex items-center gap-[8px] lg:gap-[12px]">
+                                            <p class="text-[#FF6347] text-[18px] font-semibold mb-[4px] md:mb-0">900.000đ</p>
+                                            <p class="text-[14px] text-[#D3D3D3] line-through">1.000.000đ</p>
+                                        </div>
+                                        <!-- <p class="text-[#FF6347] text-[18px] font-semibold">{{ formatPrice(item.sizeAndPrice[0].price) }}</p> -->
+                                        <div class="text-center lg:hidden mt-[12px]">
+                                            <button class="bg-[#76A021] text-[14px] px-[10px] py-[8px] text-white">Thêm vào giỏ hàng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="feedback">
+            <div class="container px-[8px] md:px-[16px] 2xl:px-0 2xl:py-[80px] lg:py-[60px] md:py-[40px] py-[30px]">
+                <h3 class="text-[24px] md:text-[28px] lg:text-[36px] font-semibold lg:mb-[30px] md:mb-[20px] mb-[16px] text-center text-white relative z-[1]">Đánh giá của khách hàng</h3>
+                <div class="swiper feedback-slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="relative bg-[#76A021] rounded-[12px] px-[12px] pb-[20px] pt-[50px]">
+                                <div class="absolute left-[50%] translate-x-[-50%] top-[-40px] rounded-full w-[80px] h-[80px] overflow-hidden"><img src="./assets/images/img-feedback.jpg" alt="" class="w-full h-full object-cover"></div>
+                                <p class="text-center text-white text-[18px] font-semibold mb-[4px]">Nguyễn Thị B</p>
+                                <p class="text-center text-white text-[14px] font-normal pb-[16px] border-b-[2px] border-solid border-white">Quản lý khách sạn</p>
+                                <p class="text-center text-white italic text-[14px] mt-[12px]">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum amet perferendis dolore iure laboriosam, exercitationem in tempora eum perspiciatis error quisquam, voluptatem repudiandae, expedita earum repellendus dicta quam saepe ipsum.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative bg-[#76A021] rounded-[12px] px-[12px] pb-[20px] pt-[50px]">
+                                <div class="absolute left-[50%] translate-x-[-50%] top-[-40px] rounded-full w-[80px] h-[80px] overflow-hidden"><img src="./assets/images/img-feedback.jpg" alt="" class="w-full h-full object-cover"></div>
+                                <p class="text-center text-white text-[18px] font-semibold mb-[4px]">Nguyễn Thị B</p>
+                                <p class="text-center text-white text-[14px] font-normal pb-[16px] border-b-[2px] border-solid border-white">Quản lý khách sạn</p>
+                                <p class="text-center text-white italic text-[14px] mt-[12px]">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum amet perferendis dolore iure laboriosam, exercitationem in tempora eum perspiciatis error quisquam, voluptatem repudiandae, expedita earum repellendus dicta quam saepe ipsum.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative bg-[#76A021] rounded-[12px] px-[12px] pb-[20px] pt-[50px]">
+                                <div class="absolute left-[50%] translate-x-[-50%] top-[-40px] rounded-full w-[80px] h-[80px] overflow-hidden"><img src="./assets/images/img-feedback.jpg" alt="" class="w-full h-full object-cover"></div>
+                                <p class="text-center text-white text-[18px] font-semibold mb-[4px]">Nguyễn Thị B</p>
+                                <p class="text-center text-white text-[14px] font-normal pb-[16px] border-b-[2px] border-solid border-white">Quản lý khách sạn</p>
+                                <p class="text-center text-white italic text-[14px] mt-[12px]">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum amet perferendis dolore iure laboriosam, exercitationem in tempora eum perspiciatis error quisquam, voluptatem repudiandae, expedita earum repellendus dicta quam saepe ipsum.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="relative bg-[#76A021] rounded-[12px] px-[12px] pb-[20px] pt-[50px]">
+                                <div class="absolute left-[50%] translate-x-[-50%] top-[-40px] rounded-full w-[80px] h-[80px] overflow-hidden"><img src="./assets/images/img-feedback.jpg" alt="" class="w-full h-full object-cover"></div>
+                                <p class="text-center text-white text-[18px] font-semibold mb-[4px]">Nguyễn Thị B</p>
+                                <p class="text-center text-white text-[14px] font-normal pb-[16px] border-b-[2px] border-solid border-white">Quản lý khách sạn</p>
+                                <p class="text-center text-white italic text-[14px] mt-[12px]">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum amet perferendis dolore iure laboriosam, exercitationem in tempora eum perspiciatis error quisquam, voluptatem repudiandae, expedita earum repellendus dicta quam saepe ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <section class="media">
+            <div class="container px-[8px] md:px-[16px] 2xl:px-0 2xl:py-[80px] lg:py-[60px] md:py-[40px] py-[30px]">
+                <h3 class="text-[24px] md:text-[28px] lg:text-[36px] font-semibold lg:mb-[30px] md:mb-[20px] mb-[16px] text-center text-[#76A021]">Hình ảnh thực tế</h3>
+                <div class="list-media">
+                    <div class="swiper media-slide">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="./assets/images/hinh-anh-thuc-te.jpg" data-fancybox="gallery">
+                                    <div class="relative pb-[80%]">
+                                        <img src="./assets/images/hinh-anh-thuc-te.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./assets/images/hinh-anh-thuc-te.jpg" data-fancybox="gallery">
+                                    <div class="relative pb-[80%]">
+                                        <img src="./assets/images/hinh-anh-thuc-te.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./assets/images/hinh-anh-thuc-te.jpg" data-fancybox="gallery">
+                                    <div class="relative pb-[80%]">
+                                        <img src="./assets/images/hinh-anh-thuc-te.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./assets/images/hinh-anh-thuc-te.jpg" data-fancybox="gallery">
+                                    <div class="relative pb-[80%]">
+                                        <img src="./assets/images/hinh-anh-thuc-te.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./assets/images/hinh-anh-thuc-te.jpg" data-fancybox="gallery">
+                                    <div class="relative pb-[80%]">
+                                        <img src="./assets/images/hinh-anh-thuc-te.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./assets/images/hinh-anh-thuc-te.jpg" data-fancybox="gallery">
+                                    <div class="relative pb-[80%]">
+                                        <img src="./assets/images/hinh-anh-thuc-te.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./assets/images/hinh-anh-thuc-te.jpg" data-fancybox="gallery">
+                                    <div class="relative pb-[80%]">
+                                        <img src="./assets/images/hinh-anh-thuc-te.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./assets/images/hinh-anh-thuc-te.jpg" data-fancybox="gallery">
+                                    <div class="relative pb-[80%]">
+                                        <img src="./assets/images/hinh-anh-thuc-te.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./assets/images/hinh-anh-thuc-te.jpg" data-fancybox="gallery">
+                                    <div class="relative pb-[80%]">
+                                        <img src="./assets/images/hinh-anh-thuc-te.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./assets/images/hinh-anh-thuc-te.jpg" data-fancybox="gallery">
+                                    <div class="relative pb-[80%]">
+                                        <img src="./assets/images/hinh-anh-thuc-te.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./assets/images/hinh-anh-thuc-te.jpg" data-fancybox="gallery">
+                                    <div class="relative pb-[80%]">
+                                        <img src="./assets/images/hinh-anh-thuc-te.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./assets/images/hinh-anh-thuc-te.jpg" data-fancybox="gallery">
+                                    <div class="relative pb-[80%]">
+                                        <img src="./assets/images/hinh-anh-thuc-te.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./assets/images/hinh-anh-thuc-te.jpg" data-fancybox="gallery">
+                                    <div class="relative pb-[80%]">
+                                        <img src="./assets/images/hinh-anh-thuc-te.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                      </div>
+                </div>
+            </div>
+        </section>
+        <section class="news">
+            <div class="container px-[8px] md:px-[16px] 2xl:px-0 2xl:py-[80px] lg:py-[60px] md:py-[40px] py-[30px]">
+                <div class="md:flex items-center justify-between mb-[12px] md:mb-[16px] lg:mb-[24px]">
+                    <h3 class="text-[24px] md:text-[28px] lg:text-[36px] font-semibold text-[#76A021] mb-[8px] md:mb-0">Tin tức mới nhất</h3>
+                    <a href="#"
+                        class="button-hover relative items-center f-semibold xl:text-[18px] xl:leading-[24px] md:px-[14px] px-[8px] xl:px-[20px] md:py-[10px] py-[5px] bg-white cursor-pointer  text-[14px] lg:text-[16px] text-[#76A021]">
+                        <span class="relative z-[1] text-[#76A021] mr-[8px]">Xem tất cả</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="list-news grid grid-cols-1 md:grid-cols-3 gap-[10px]">
+                    <div class="big-news md:col-span-2 relative">
+                        <a href="#" class="h-full"><img src="./assets/images/img-news.jpg" alt="" class="w-full h-full object-cover"></a>
+                        <div class="absolute bottom-0 left-0 w-full p-[10px] md:p-[20px]">
+                            <div class="overlay-white"></div>
+                            <a href="#" class="inline-block text-[20px] md:text-[24px] lg:text-[30px] font-semibold line-clamp-2 hover:text-[#76A021] transition-all duration-300 ease-linear mb-[8px] relative z-[1]">Tiêu đề</a>
+                            <p class="text-[14px] text-justify line-clamp-3 relative z-[1]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod aut neque voluptates hic, reiciendis, unde labore consequatur sequi animi, ut voluptate recusandae? Voluptatum quis eligendi tempora alias accusamus enim adipisci!</p>
+                        </div>
+                    </div>
+                    <div class="small-news md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-[10px] md:gap-[20px]">
+                        <div class="flex flex-col gap-[4px]">
+                            <a href="#" class="flex-1 h-[130px] md:h-[200px]"><img src="./assets/images/img-news.jpg" alt="" class="w-full  h-[130px] md:h-[200px] object-cover"></a>
+                            <div class="shrink-0">
+                                <a href="#" class="inline-block text-[16px] font-semibold line-clamp-1 hover:text-[#76A021] transition-all duration-300 ease-linear relative z-[1]">Tiêu đề</a>
+                                <p class="text-[14px] text-justify line-clamp-3 relative z-[1]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod aut neque voluptates hic, reiciendis, unde labore consequatur sequi animi, ut voluptate recusandae? Voluptatum quis eligendi tempora alias accusamus enim adipisci!</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-[4px]">
+                            <a href="#" class="flex-1 h-[130px] md:h-[200px]"><img src="./assets/images/img-news.jpg" alt="" class="w-full  h-[130px] md:h-[200px] object-cover"></a>
+                            <div class="shrink-0">
+                                <a href="#" class="inline-block text-[16px] font-semibold line-clamp-1 hover:text-[#76A021] transition-all duration-300 ease-linear relative z-[1]">Tiêu đề</a>
+                                <p class="text-[14px] text-justify line-clamp-3 relative z-[1]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod aut neque voluptates hic, reiciendis, unde labore consequatur sequi animi, ut voluptate recusandae? Voluptatum quis eligendi tempora alias accusamus enim adipisci!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container px-[8px] md:px-[16px] 2xl:px-0 2xl:pb-[80px] lg:pb-[60px] md:pb-[40px] pb-[30px] 2xl:pt-[60px] lg:pt-[40px] md:pt-[30px] pt-[20px]">
+            <div class="flex items-center justify-center gap-[12px] flex-col pb-[12px] md:pb-[16px] lg:pb-[20px] border-b-[1px] border-solid border-white">
+                <img src="./assets/images/Logo-footer.png" alt="Err" class="max-w-[300px]">
+                <div class="text-center">
+                    <p class="uppercase md:text-[20px] lg:text-[24px] font-semibold text-white mb-[8px]">Công ty TNHH chăn ga gối đệm Hà Thành</p>
+                    <p class="text-[14px] md:text-[16px] lg:text-[18px] italic text-[#FFD700] capitalize">Chính hãng - Uy tín - Giá cả phù hợp</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[10px] md:gap-[20px] lg:gap-[30px] pt-[12px] md:pt-[16px] lg:pt-[20px]">
+                <div class="">
+                    <h3 class="title-footer relative uppercase md:text-[18px] lg:text-[20px] text-white font-bold pb-[8px] md:pb-[12px]">Thông tin liên hệ</h3>
+                    <ul class="pt-[16px] md:pt-[20px]">
+                        <li class="text-[14px] text-white font-normal mb-[4px]"><span class="font-semibold">Địa chỉ: </span>Thôn Ninh Xá, Ninh Sở, Thường Tín, Hà Nội</li>
+                        <li class="text-[14px] text-white font-normal mb-[4px]"><span class="font-semibold">Hotline: </span>0243 6825426</li>
+                        <li class="text-[14px] text-white font-normal"><span class="font-semibold">Email: </span>hathanhijsc@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="title-footer relative uppercase md:text-[18px] lg:text-[20px] text-white font-bold pb-[8px] md:pb-[12px]">Danh mục sản phẩm</h3>
+                    <ul class="pt-[16px] md:pt-[20px]">
+                        <li class="uppercase text-[14px] text-white font-semibold mb-[4px]">Chăn ga cao cấp khách sạn</li>
+                        <li class="uppercase text-[14px] text-white font-semibold mb-[4px]">Chăn ga gia đình</li>
+                        <li class="uppercase text-[14px] text-white font-semibold">nệm</li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="title-footer relative uppercase md:text-[18px] lg:text-[20px] text-white font-bold pb-[8px] md:pb-[12px]">Chính sách</h3>
+                    <ul class="pt-[16px] md:pt-[20px]">
+                        <li class="text-[14px] text-white font-normal mb-[4px]">Chính sách giao hàng</li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="title-footer relative uppercase md:text-[18px] lg:text-[20px] text-white font-bold pb-[8px] md:pb-[12px]">Fanpage</h3>
+                    <div class="pt-[16px] md:pt-[20px]">
+                        <!-- <iframe src="https://www.facebook.com/Changagoidem2021/?ref=embed_page" frameborder="0" class="w-full"></iframe> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright py-[8px] relative text-white text-center">
+            @Copyright 2024 by G9 Myl0v3
+        </div>
+    </footer>
+    <script src="./assets/js/swiper-bundle.min.js" defer></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/jquery.fancybox.min.js"></script>
+    <script src="./assets/js/slide.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+</body>
+</html>

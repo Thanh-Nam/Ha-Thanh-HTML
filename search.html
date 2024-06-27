@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.css">
+    <link rel="stylesheet" href="./assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="./assets/css/output.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header id="header" class="sticky top-0 z-30 shadow-2xl">
+        <div class="bg-[#76A021] hidden lg:block">
+            <div class="container flex items-center justify-between py-[8px] px-[8px] md:px-[16px] xl:px-0">
+                <a href="tel:0974237890" class="text-white leading-[137.5%] font-normal">Hotline: <span class="font-bold">0974 23 7890</span></a>
+                <form class="relative">
+                    <input type="text" class="w-[400px] bg-transparent border-[1px] border-solid border-white rounded-[32px] px-[12px] py-[6px] outline-none text-white text-[14px] placeholder:text-[#f5f5f5]" placeholder="Nhập từ khoá tìm kiếm...">
+                    <button type="submit" class="absolute top-[50%] translate-y-[-50%] right-[12px] text-white"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <div class="flex items-center gap-[16px]">
+                    <button class="login text-[14px] font-bold px-[16px] py-[8px] bg-white transition-all duration-300 ease-linear hover:bg-[#FFD700]">Đăng nhập</button>
+                    <button class="register text-[14px] font-bold px-[16px] py-[8px] bg-[#FFD700] transition-all duration-300 ease-linear hover:bg-white">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#fff]">
+            <div class="container flex items-center justify-between py-[8px] px-[8px] md:px-[16px] xl:px-0">
+                <div class="lg:hidden">
+                    <button class="text-[24px]" onclick="handleOpenMenu()"><i class="fa-solid fa-bars"></i></button>
+                    <div class="overlay fixed top-0 left-0 right-0 bottom-0 bg-black/30 translate-x-[100%] opacity-0 ease-linear duration-300 transition-all z-[19]"></div>
+                    <div class="menu-mobile fixed top-0 left-0 bottom-0 w-[320px] bg-white z-20 px-[16px] py-[42px] translate-x-[-100%] opacity-0 ease-linear duration-300 transition-all">
+                        <button class="close-menu-mobile text-[24px] px-[12px] py-[9px] text-[#76A021] absolute top-0 right-0 flex"><i class="fa-solid fa-xmark"></i></button> 
+                        <div class="flex items-start justify-center mb-[12px]">
+                            <img src="./assets/images/Logo.png" alt="Logo" class="max-w-[100px]">
+                        </div>
+                        <div class="relative mb-[12px]">
+                            <input type="text" class="bg-transparent w-full border-[1px] border-solid border-[#76A021] rounded-[32px] px-[12px] py-[6px] outline-none text-[#76A021] text-[14px] placeholder:text-[#76A021]" placeholder="Nhập từ khoá tìm kiếm...">
+                            <button class="absolute top-[50%] translate-y-[-50%] right-[12px] text-[#76A021]"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                        <ul>
+                            <li><a href="" >Trang chủ</a></li>
+                            <li><a href="" >Giới thiệu</a></li>
+                            <li><a href="" >Hồ sơ năng lực</a></li>
+                            <li><a href="" >Sản phẩm</a></li>
+                            <li><a href="" >Tin tức</a></li>
+                            <li><a href="" >Liên hệ</a></li>
+                        </ul>
+                        <div class="flex items-center justify-center gap-[16px] mt-[12px]">
+                            <button class="login text-[14px] font-bold px-[16px] py-[8px] bg-[#76A021] text-white">Đăng nhập</button>
+                            <button class="register text-[14px] font-bold px-[16px] py-[8px] bg-[#FFD700]">Đăng ký</button>
+                        </div>
+                    </div>
+                </div>
+                <router-link to="/" class="inline-block max-w-[74px]"><img src="./assets/images/Logo.png" alt="Logo"></router-link>
+                <div class="menu hidden lg:block">
+                    <ul>
+                        <li><a href="" >Trang chủ</a></li>
+                        <li><a href="" >Giới thiệu</a></li>
+                        <li><a href="" >Hồ sơ năng lực</a></li>
+                        <li><a href="" >Sản phẩm</a></li>
+                        <li><a href="" >Tin tức</a></li>
+                        <li><a href="" >Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="relative cursor-pointer">
+                    <i class="fa-solid fa-cart-shopping text-[20px]"></i>
+                    <p class="absolute top-[-12px] left-[-12px] w-[24px] h-[24px] bg-[#76A021] rounded-full text-white flex items-center justify-center">0</p>
+                </div>
+            </div>
+        </div>
+        <button class="back-to-top fixed z-[20] bottom-[30px] right-[20px] text-[24px] bg-white text-[#FFD700] w-[40px] h-[40px] hidden items-center justify-center rounded-full border-[1px] border-solid border-[#FFD700]"><i class="fa-solid fa-arrow-up"></i></button>
+    </header>
+    <main>
+        <section class="compo-banner">
+            <div><img src="./assets/images/banner.webp" alt="" class="w-full h-full object-cover"></div>
+            <div class="p-[8px] bg-[#dedede]">
+                <div class="container">
+                    <div class="breadcrumb flex items-center">
+                        <a href="/" class="flex md:mr-[8px] mr-[4px]">
+                            <span class="font-normal leading-[137.5%] mr-[4px] hover:text-[#76A021] transition-all duration-300 ease-linear">Trang chủ</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFD700">
+                                <path d="M13 17L18 12L13 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 17L11 12L6 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <span class="text-[#76A021] font-normal leading-[137.5%]">Tìm kiếm</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container px-[8px] md:px-[16px] 2xl:px-0 2xl:py-[80px] lg:py-[60px] md:py-[40px] py-[30px] grid grid-cols-4 gap-[30px]">
+            <div class="navbar col-span-1">
+                <div>
+                    <div class="bg-[#f9f9f9] rounded-[8px] cate-nav mb-[30px]">
+                        <h3 class="md:text-[18px] font-semibold p-[6px] md:p-[10px] border-b-[1px] border-solid border-[#e7e7e7]">Danh mục sản phẩm</h3>
+                        <ul class="p-[6px] md:p-[10px]">
+                            <li class="title-cate" class="text-[16px] transition-all duration-300 ease-linear"><a href="#"><i class="fa-solid fa-caret-right mr-[4px] md:mr-[8px]"></i>Chăn ga khách sạn</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-[#f9f9f9] rounded-[8px] filter-price">
+                        <h3 class="md:text-[18px] font-semibold p-[6px] md:p-[10px] border-b-[1px] border-solid border-[#e7e7e7]">Giá</h3>
+                        <ul class="p-[6px] md:p-[10px]">
+                            <li>
+                                <label for="max-2000" class="inline-flex items-center gap-[10px] cursor-pointer">
+                                    <input type="radio" id="max-2000" name="fillterPrice">
+                                    <span>Dưới 2.000.000đ</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="2000-6000" class="inline-flex items-center gap-[10px] cursor-pointer">
+                                    <input type="radio" id="2000-6000" name="fillterPrice">
+                                    <span>2.000.000đ - 6.000.000đ</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="6000-10000" class="inline-flex items-center gap-[10px] cursor-pointer">
+                                    <input type="radio" id="6000-10000" name="fillterPrice">
+                                    <span>6.000.000đ - 10.000.000đ</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="min-10000" class="inline-flex items-center gap-[10px] cursor-pointer">
+                                    <input type="radio" id="min-10000" name="fillterPrice">
+                                    <span>Trên 10.000.000đ</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-3">
+                <div>
+                    <div class="filter gap-[10px] flex items-center justify-between p-[10px] bg-[#f9f9f9] mb-[10px]">
+                        <p>Kết quả tìm kiếm cho từ khóa: <span class="font-bold text-[#76A021]">123</span></p>
+                    </div>
+                    <div class="list-product grid grid-cols-3 gap-[10px]">
+                        <div class="pro-item bg-white rounded-[4px] overflow-hidden">
+                            <div class="pro-img w-full relative pb-[80%] overflow-hidden">
+                                <a href="#" class="absolute top-0 left-0 w-full h-full"><img src="./assets/images/pro-detail-1.jpg" alt="" class="w-full h-full object-cover"></a>
+                                <p class="absolute top-[10px] right-[10px] w-[40px] h-[40px] bg-[#d80027] text-white rounded-full flex items-center justify-center">15%</p>
+                                <button class="absolute top-[-60px] left-[10px] w-[40px] h-[40px] bg-[#76A021] text-white flex items-center justify-center rounded-full border-[1px] border-solid border-[#76A021] hover:bg-white hover:text-[#76A021]"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                            <div class="p-[8px] md:p-[12px] lg:p-[16px]">
+                                <a href="#" class="text-[16px] font-semibold line-clamp-2 hover:text-[#76A021] transition-all duration-300 ease-linear mb-[8px]">Chăn ga khách sạn 1</a>
+                                <div class="md:flex items-center gap-[8px] lg:gap-[12px]">
+                                    <p class="text-[#FF6347] text-[18px] font-semibold mb-[4px] md:mb-0">900.000đ</p>
+                                    <p class="text-[14px] text-[#D3D3D3] line-through">1.000.000đ</p>
+                                </div>
+                                <!-- <p class="text-[#FF6347] text-[18px] font-semibold">{{ formatPrice(item.sizeAndPrice[0].price) }}</p> -->
+                                <div class="text-center lg:hidden mt-[12px]">
+                                    <button class="bg-[#76A021] text-[14px] px-[10px] py-[8px] text-white">Thêm vào giỏ hàng</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pro-item bg-white rounded-[4px] overflow-hidden">
+                            <div class="pro-img w-full relative pb-[80%] overflow-hidden">
+                                <a href="#" class="absolute top-0 left-0 w-full h-full"><img src="./assets/images/pro-detail-1.jpg" alt="" class="w-full h-full object-cover"></a>
+                                <p class="absolute top-[10px] right-[10px] w-[40px] h-[40px] bg-[#d80027] text-white rounded-full flex items-center justify-center">15%</p>
+                                <button class="absolute top-[-60px] left-[10px] w-[40px] h-[40px] bg-[#76A021] text-white flex items-center justify-center rounded-full border-[1px] border-solid border-[#76A021] hover:bg-white hover:text-[#76A021]"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                            <div class="p-[8px] md:p-[12px] lg:p-[16px]">
+                                <a href="#" class="text-[16px] font-semibold line-clamp-2 hover:text-[#76A021] transition-all duration-300 ease-linear mb-[8px]">Chăn ga khách sạn 1</a>
+                                <div class="md:flex items-center gap-[8px] lg:gap-[12px]">
+                                    <p class="text-[#FF6347] text-[18px] font-semibold mb-[4px] md:mb-0">900.000đ</p>
+                                    <p class="text-[14px] text-[#D3D3D3] line-through">1.000.000đ</p>
+                                </div>
+                                <!-- <p class="text-[#FF6347] text-[18px] font-semibold">{{ formatPrice(item.sizeAndPrice[0].price) }}</p> -->
+                                <div class="text-center lg:hidden mt-[12px]">
+                                    <button class="bg-[#76A021] text-[14px] px-[10px] py-[8px] text-white">Thêm vào giỏ hàng</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pro-item bg-white rounded-[4px] overflow-hidden">
+                            <div class="pro-img w-full relative pb-[80%] overflow-hidden">
+                                <a href="#" class="absolute top-0 left-0 w-full h-full"><img src="./assets/images/pro-detail-1.jpg" alt="" class="w-full h-full object-cover"></a>
+                                <p class="absolute top-[10px] right-[10px] w-[40px] h-[40px] bg-[#d80027] text-white rounded-full flex items-center justify-center">15%</p>
+                                <button class="absolute top-[-60px] left-[10px] w-[40px] h-[40px] bg-[#76A021] text-white flex items-center justify-center rounded-full border-[1px] border-solid border-[#76A021] hover:bg-white hover:text-[#76A021]"><i class="fa-solid fa-cart-plus"></i></button>
+                            </div>
+                            <div class="p-[8px] md:p-[12px] lg:p-[16px]">
+                                <a href="#" class="text-[16px] font-semibold line-clamp-2 hover:text-[#76A021] transition-all duration-300 ease-linear mb-[8px]">Chăn ga khách sạn 1</a>
+                                <div class="md:flex items-center gap-[8px] lg:gap-[12px]">
+                                    <p class="text-[#FF6347] text-[18px] font-semibold mb-[4px] md:mb-0">900.000đ</p>
+                                    <p class="text-[14px] text-[#D3D3D3] line-through">1.000.000đ</p>
+                                </div>
+                                <!-- <p class="text-[#FF6347] text-[18px] font-semibold">{{ formatPrice(item.sizeAndPrice[0].price) }}</p> -->
+                                <div class="text-center lg:hidden mt-[12px]">
+                                    <button class="bg-[#76A021] text-[14px] px-[10px] py-[8px] text-white">Thêm vào giỏ hàng</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container px-[8px] md:px-[16px] 2xl:px-0 2xl:pb-[80px] lg:pb-[60px] md:pb-[40px] pb-[30px] 2xl:pt-[60px] lg:pt-[40px] md:pt-[30px] pt-[20px]">
+            <div class="flex items-center justify-center gap-[12px] flex-col pb-[12px] md:pb-[16px] lg:pb-[20px] border-b-[1px] border-solid border-white">
+                <img src="./assets/images/Logo-footer.png" alt="Err" class="max-w-[300px]">
+                <div class="text-center">
+                    <p class="uppercase md:text-[20px] lg:text-[24px] font-semibold text-white mb-[8px]">Công ty TNHH chăn ga gối đệm Hà Thành</p>
+                    <p class="text-[14px] md:text-[16px] lg:text-[18px] italic text-[#FFD700] capitalize">Chính hãng - Uy tín - Giá cả phù hợp</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[10px] md:gap-[20px] lg:gap-[30px] pt-[12px] md:pt-[16px] lg:pt-[20px]">
+                <div class="">
+                    <h3 class="title-footer relative uppercase md:text-[18px] lg:text-[20px] text-white font-bold pb-[8px] md:pb-[12px]">Thông tin liên hệ</h3>
+                    <ul class="pt-[16px] md:pt-[20px]">
+                        <li class="text-[14px] text-white font-normal mb-[4px]"><span class="font-semibold">Địa chỉ: </span>Thôn Ninh Xá, Ninh Sở, Thường Tín, Hà Nội</li>
+                        <li class="text-[14px] text-white font-normal mb-[4px]"><span class="font-semibold">Hotline: </span>0243 6825426</li>
+                        <li class="text-[14px] text-white font-normal"><span class="font-semibold">Email: </span>hathanhijsc@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="title-footer relative uppercase md:text-[18px] lg:text-[20px] text-white font-bold pb-[8px] md:pb-[12px]">Danh mục sản phẩm</h3>
+                    <ul class="pt-[16px] md:pt-[20px]">
+                        <li class="uppercase text-[14px] text-white font-semibold mb-[4px]">Chăn ga cao cấp khách sạn</li>
+                        <li class="uppercase text-[14px] text-white font-semibold mb-[4px]">Chăn ga gia đình</li>
+                        <li class="uppercase text-[14px] text-white font-semibold">nệm</li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="title-footer relative uppercase md:text-[18px] lg:text-[20px] text-white font-bold pb-[8px] md:pb-[12px]">Chính sách</h3>
+                    <ul class="pt-[16px] md:pt-[20px]">
+                        <li class="text-[14px] text-white font-normal mb-[4px]">Chính sách giao hàng</li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="title-footer relative uppercase md:text-[18px] lg:text-[20px] text-white font-bold pb-[8px] md:pb-[12px]">Fanpage</h3>
+                    <div class="pt-[16px] md:pt-[20px]">
+                        <!-- <iframe src="https://www.facebook.com/Changagoidem2021/?ref=embed_page" frameborder="0" class="w-full"></iframe> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright py-[8px] relative text-white text-center">
+            @Copyright 2024 by G9 Myl0v3
+        </div>
+    </footer>
+    <script src="./assets/js/swiper-bundle.min.js" defer></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/jquery.fancybox.min.js"></script>
+    <script src="./assets/js/slide.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+</body>
+</html>
